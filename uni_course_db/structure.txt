@@ -1,0 +1,17 @@
+crud_app/
+├── app.py
+├── pages/
+│   ├── 1_Department.py
+│   ├── 2_SubjectAreas.py
+│   ├── 3_Course.py
+│   ├── 4_User.py
+│   ├── 5_Student.py
+│   ├── 6_Instructor.py
+│   ├── 7_Enrollments.py
+│   ├── 8_CourseClassification.py
+│   ├── 9_FinalProjects.py
+│   ├── 10_ProjectSubmission.py
+│   ├── 11_CourseFaculty.py
+│   └── 12_DepartmentCourses.py
+├── requirements.txt
+└── .streamlit/secrets.toml
