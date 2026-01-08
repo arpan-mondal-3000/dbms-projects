@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="University Course DB",
+    page_title="Scientific Publication DB",
     layout="centered"
 )
 

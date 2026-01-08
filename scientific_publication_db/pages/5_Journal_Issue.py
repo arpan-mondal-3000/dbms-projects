@@ -5,9 +5,7 @@ conn = st.connection("mysql", type="sql")
 
 st.title("Journal Issues")
 
-# ===============================
 # READ
-# ===============================
 df = conn.query("""
     SELECT 
         j.VolumeIdentifier,
@@ -33,9 +31,7 @@ editor_map = {
     for _, row in researcher_df.iterrows()
 }
 
-# ===============================
 # CREATE
-# ===============================
 st.subheader("Add journal issue")
 
 with st.form("add_journal_issue", clear_on_submit=True):
@@ -68,9 +64,7 @@ if submit:
     st.toast("Journal issue added")
     st.rerun()
 
-# ===============================
 # UPDATE
-# ===============================
 st.subheader("Update journal issue")
 
 with st.form("update_journal_issue", clear_on_submit=True):
@@ -106,9 +100,7 @@ if submit:
     st.toast("Journal issue updated")
     st.rerun()
 
-# ===============================
 # DELETE
-# ===============================
 st.subheader("Delete journal issue")
 
 with st.form("delete_journal_issue", clear_on_submit=True):

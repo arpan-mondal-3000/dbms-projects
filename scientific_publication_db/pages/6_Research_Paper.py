@@ -5,9 +5,7 @@ conn = st.connection("mysql", type="sql")
 
 st.title("Research Papers")
 
-# ===============================
 # READ
-# ===============================
 df = conn.query("""
     SELECT
         rp.PaperId,
@@ -45,9 +43,7 @@ researcher_map = {
     for _, row in researcher_df.iterrows()
 }
 
-# ===============================
 # CREATE
-# ===============================
 st.subheader("Add research paper")
 
 with st.form("add_research_paper", clear_on_submit=True):
@@ -75,9 +71,7 @@ if submit:
     st.toast("Research paper added")
     st.rerun()
 
-# ===============================
 # UPDATE
-# ===============================
 st.subheader("Update research paper")
 
 with st.form("update_research_paper", clear_on_submit=True):
@@ -110,9 +104,7 @@ if submit:
     st.toast("Research paper updated")
     st.rerun()
 
-# ===============================
 # DELETE
-# ===============================
 st.subheader("Delete research paper")
 
 with st.form("delete_research_paper", clear_on_submit=True):

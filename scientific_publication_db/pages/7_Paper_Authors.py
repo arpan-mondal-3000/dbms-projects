@@ -5,9 +5,7 @@ conn = st.connection("mysql", type="sql")
 
 st.title("Paper Authors")
 
-# ===============================
 # READ
-# ===============================
 df = conn.query("""
     SELECT
         pa.PaperId,
@@ -44,9 +42,7 @@ researcher_map = {
     for _, row in researcher_df.iterrows()
 }
 
-# ===============================
 # CREATE
-# ===============================
 st.subheader("Add author to paper")
 
 with st.form("add_paper_author", clear_on_submit=True):
@@ -71,9 +67,7 @@ if submit:
     st.toast("Author added to paper")
     st.rerun()
 
-# ===============================
 # DELETE
-# ===============================
 st.subheader("Remove author from paper")
 
 with st.form("delete_paper_author", clear_on_submit=True):
