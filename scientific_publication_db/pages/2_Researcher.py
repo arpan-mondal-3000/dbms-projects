@@ -5,9 +5,7 @@ conn = st.connection("mysql", type="sql")
 
 st.title("Researchers")
 
-# ===============================
 # READ
-# ===============================
 df = conn.query("SELECT * FROM Researchers", ttl=0)
 st.dataframe(df, width="stretch")
 
@@ -19,9 +17,7 @@ office_df = conn.query(
 
 office_list = office_df["OfficeAddress"].tolist()
 
-# ===============================
 # CREATE
-# ===============================
 st.subheader("Add a new researcher")
 
 with st.form("add_researcher", clear_on_submit=True):
@@ -49,9 +45,7 @@ if submit:
     st.toast("Researcher added successfully")
     st.rerun()
 
-# ===============================
 # UPDATE
-# ===============================
 st.subheader("Update researcher")
 
 with st.form("update_researcher", clear_on_submit=True):
@@ -81,9 +75,7 @@ if submit:
     st.toast("Researcher updated")
     st.rerun()
 
-# ===============================
 # DELETE
-# ===============================
 st.subheader("Delete researcher")
 
 with st.form("delete_researcher", clear_on_submit=True):

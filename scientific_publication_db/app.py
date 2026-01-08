@@ -5,7 +5,7 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("University Course Management System")
+st.title("Scientific Publication Database")
 
 st.markdown("""
 Welcome to the **Scientific publication database CRUD** implementation using:
