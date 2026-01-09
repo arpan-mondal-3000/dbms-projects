@@ -1,4 +1,4 @@
-# University course database CRUD implementation
+# Scientific publication database CRUD implementation
 
 ## Tech stack
 
@@ -17,7 +17,7 @@
     ```
 - Create a new database
     ```mysql
-    CREATE DATABASE uni_course_db;
+    CREATE DATABASE sci_pub_db;
     ```
 - Run the db/schema.sql file to create the tables
     ```mysql
@@ -33,7 +33,7 @@ dialect = "mysql"
 driver = "mysqldb"
 host = "localhost"
 port = 3306
-database = "uni_course_db"
+database = "sci_pub_db"
 username = "your_usename"
 password = "your_password"
 ```

@@ -50,12 +50,15 @@ st.subheader("Update researcher")
 
 with st.form("update_researcher", clear_on_submit=True):
     researcher_id = st.selectbox("Select Researcher ID", df["EmpId"])
+    current_name = df[df["EmpId"] == researcher_id]["Name"].iloc[0]
     new_name = st.text_input("New Name")
     new_office = st.selectbox("New Office Address", office_list)
 
     submit = st.form_submit_button("Update")
 
 if submit:
+    if new_name.strip() == "":
+        new_name = current_name
     with conn.session as session:
         session.execute(
             text("""

@@ -76,6 +76,7 @@ st.subheader("Update research paper")
 
 with st.form("update_research_paper", clear_on_submit=True):
     paper_id = st.selectbox("Select Paper ID", df["PaperId"])
+    current_title = df[df["PaperId"] == paper_id]["Title"].iloc[0]
     new_title = st.text_input("New Title")
     new_journal_label = st.selectbox("New Journal Issue", list(journal_map.keys()))
     new_lead_author_label = st.selectbox("New Lead Author", list(researcher_map.keys()))
@@ -83,6 +84,8 @@ with st.form("update_research_paper", clear_on_submit=True):
     submit = st.form_submit_button("Update")
 
 if submit:
+    if new_title.strip() == "":
+        new_title = current_title
     with conn.session as session:
         session.execute(
             text("""

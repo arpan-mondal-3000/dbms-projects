@@ -69,6 +69,7 @@ st.subheader("Update journal issue")
 
 with st.form("update_journal_issue", clear_on_submit=True):
     selected_vol = st.selectbox("Select Volume", df["VolumeIdentifier"])
+    current_title = df[df["VolumeIdentifier"] == selected_vol]["Title"].iloc[0]
     new_title = st.text_input("New Title")
     new_date = st.date_input("New Publication Date")
     new_format = st.selectbox("New Format", ["Print", "Online"])
@@ -77,6 +78,8 @@ with st.form("update_journal_issue", clear_on_submit=True):
     submit = st.form_submit_button("Update")
 
 if submit:
+    if new_title.strip() == "":
+        new_title = current_title
     with conn.session as session:
         session.execute(
             text("""
